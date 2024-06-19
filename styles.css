@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+}
+
+body{
+  padding: 15px;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.container{
+  display: grid;
+  grid-template-areas: 
+  "daniel "
+  "jonathan"
+  "jeanette"
+  "patrick"
+  "kira" ;
+  row-gap: 20px;
+
+}
+
+.item{
+  display: grid;
+  row-gap: 15px;
+  background-color: hsl(0, 0%, 100%) ; 
+  border-radius: .7rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 25px;
+}
+
+.daniel{
+  grid-area: daniel;
+}
+.patrick{
+  grid-area: patrick;
+}
+.kira{
+  grid-area: kira;
+} 
+.jonathan{
+  grid-area: jonathan;
+}
+.jeanette{
+  grid-area: jeanette;
+} 
+
+.daniel{
+  background-color: hsl(263, 55%, 52%);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position:top right 75px;
+}
+
+.jonathan{
+  background-color:  hsl(217, 19%, 35%);
+}
+
+.patrick {
+  background-color: hsl(219, 29%, 14%);
+}
+
+.daniel, .jonathan, .patrick {
+  color: hsla(0, 0%, 100%, 0.734);
+}
+
+
+header{
+  display: flex;
+  flex-direction:row;
+  column-gap: 20px;
+}
+h1{
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
+h2{
+  font-weight: 300;
+}
+.main{
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.jeanette .main ,.jeanette h1, .kira .main ,.kira h1 {
+  color: hsl(217, 19%, 35%);
+}
+.jeanette .quote ,.jeanette h2, .kira .quote ,.kira h2 {
+  color: hsla(217, 19%, 35%, 0.805);
+}
+.quote{
+  font-weight: 400;
+}
+img{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+ .daniel img, .patrick img {
+  border: 3px solid #A775F1;
+ }
+
+@media (min-width:600px) {
+  body{
+    display: flex; 
+    justify-content: center;
+  }
+  .container{
+    display: grid; 
+    max-width: 700px;
+    grid-template-areas: 
+    "daniel daniel"
+    "jonathan kira"
+    "jeanette kira"
+    "patrick patrick" ;
+    gap:20px;
+    
+  }
+}
+
+@media (min-width:900px) {
+  body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
+  }
+  .container{
+    display: grid;
+    max-width: 1050px;
+    max-height: 600px;
+    grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+    gap: max(20px);
+    justify-content: center;
+  }
+  .item{
+    display: grid;
+    row-gap: max(15px);
+    padding: 25px;
+  }
+}
